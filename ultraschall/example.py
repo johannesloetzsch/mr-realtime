@@ -42,12 +42,16 @@ def distanz():
     distanz = (TimeElapsed * 34300) / 2
  
     return distanz
- 
+
+def myprint(abstand):
+    print str(int(abstand)) + ' ' + int(abstand/3)*"#"
+
 if __name__ == '__main__':
     try:
         while True:
             abstand = distanz()
-            print ("Gemessene Entfernung = %.1f cm" % abstand)
+            #print ("Gemessene Entfernung = %.1f cm" % abstand)
+            myprint(abstand)
             time.sleep(1)
  
         # Beim Abbruch durch STRG+C resetten
