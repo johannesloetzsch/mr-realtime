@@ -1,4 +1,15 @@
+## This file shows different attempts for getting streaming to work…
+
 QUALITY ?= 5
+
+## could try:
+## * https://www.linux-projects.org/uv4l/ -> webrtc or mjpeg
+## * https://www.rs-online.com/designspark/building-a-raspberry-pi-2-webrtc-camera (gstreamer)
+
+run:
+	(sleep 5; epiphany http://raspberrypi.local:8080/javascript_simple.html) &
+	make mjpg_streamer
+
 
 mjpg_streamer:
 	[ -d /tmp/stream/ ] || mkdir /tmp/stream/
