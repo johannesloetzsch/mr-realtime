@@ -1,4 +1,6 @@
-start:	update install run
+start:	update
+	make install
+	make run
 
 update:
 	git pull origin master
