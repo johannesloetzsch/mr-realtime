@@ -7,7 +7,7 @@ QUALITY ?= 5
 ## * https://www.rs-online.com/designspark/building-a-raspberry-pi-2-webrtc-camera (gstreamer)
 
 run:
-	(sleep 5; epiphany http://raspberrypi.local:8080/javascript_simple.html) &
+	(sleep 5; DISPLAY=:0 epiphany http://raspberrypi.local:8080/javascript_simple.html) &
 	make mjpg_streamer
 
 
