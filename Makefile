@@ -13,5 +13,5 @@ install_python_gpio:
 
 run:
 	#QUALITY=2 make -C videostream
-	omxplayer /home/pi/Videos/*
+	omxplayer /home/pi/Videos/* --loop --vol -12
 
