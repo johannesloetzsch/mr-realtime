@@ -12,4 +12,6 @@ install_python_gpio:
 	sudo apt install python-rpi.gpio python-termcolor
 
 run:
-	QUALITY=2 make -C videostream
+	#QUALITY=2 make -C videostream
+	omxplayer /home/pi/Videos/* --loop --vol -12
+
