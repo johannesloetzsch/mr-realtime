@@ -4,6 +4,7 @@
 import RPi.GPIO as GPIO
 import time
 from termcolor import colored
+import os
 
 #GPIO Modus (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
@@ -43,7 +44,7 @@ def distanz():
  
     return distanz
 
-def myprint(abstand):
+def beautyprint(abstand):
     if abstand < 150:
         color='green'
     elif abstand < 300:
@@ -52,12 +53,17 @@ def myprint(abstand):
         color='red'
     print ("%4.i" %abstand) + ' ' + colored(min(150,(int(abstand/3)))*'$', color)
 
+def set_state(abstand):
+    threshold = 2500
+    if 0 < abstand and abstand < threshold:
+        os.system("curl -X PUT --header 'Content-Type: application/edn' --header 'Accept: application/json' -d '{:distance " + str(int(abstand)) + " :activity false}' 'http://localhost:3000/api/state'")
+
 if __name__ == '__main__':
     try:
         while True:
             abstand = distanz()
-            #print ("Gemessene Entfernung = %.1f cm" % abstand)
-            myprint(abstand)
+            beautyprint(abstand)
+            set_state(abstand)
             time.sleep(0.1)
  
         # Beim Abbruch durch STRG+C resetten

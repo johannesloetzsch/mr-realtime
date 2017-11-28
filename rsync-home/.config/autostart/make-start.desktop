@@ -3,4 +3,4 @@ Type=Application
 Name=autostart by Makefile
 Comment=
 NoDisplay=false
-Exec=make -C ~/Desktop/src start
+Exec=make -C ~/src start
