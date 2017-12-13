@@ -3,4 +3,5 @@ Type=Application
 Name=autostart by Makefile
 Comment=
 NoDisplay=false
-Exec=make -C ~/src start
+Terminal=false
+Exec=make -C ~/src/mr-realtime start

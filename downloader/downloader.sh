@@ -1,3 +1,4 @@
 #!/bin/bash
 
-## TODO
+## TODO ; might use https://transfer.sh/
+## or just scp ;)

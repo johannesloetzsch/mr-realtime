@@ -1,0 +1,9 @@
+[Unit]
+Description=Update A record
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/curl https://ipv4.cloudns.net/api/dynamicURL/?q=…
+
+User=pi
+Group=pi

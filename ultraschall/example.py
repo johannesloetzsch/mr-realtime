@@ -45,13 +45,13 @@ def distanz():
     return distanz
 
 def beautyprint(abstand):
-    if abstand < 150:
+    if abstand < 400:
         color='green'
-    elif abstand < 300:
+    elif abstand < 900:
         color='yellow'
     else:
         color='red'
-    print ("%4.i" %abstand) + ' ' + colored(min(150,(int(abstand/3)))*'$', color)
+    print ("%4.i" %abstand) + ' ' + colored(min(150,(int(abstand/5)))*'$', color)
 
 def set_state(abstand):
     threshold = 2500
@@ -63,7 +63,7 @@ if __name__ == '__main__':
         while True:
             abstand = distanz()
             beautyprint(abstand)
-            set_state(abstand)
+          #  set_state(abstand)
             time.sleep(0.1)
  
         # Beim Abbruch durch STRG+C resetten
