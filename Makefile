@@ -1,5 +1,6 @@
-start:	update
-	make install
+start:	#update
+	#make install
+	killall lxpanel
 	make run
 
 update:
