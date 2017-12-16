@@ -1,0 +1,21 @@
+{:dom [[:sel "body" {:set-styles! {:background-color "black"}
+                     :append! [[:video {:id "myvideo"}]
+                               [:img {:id "mywebcam"}]]}]
+       [:by-id "myvideo" {:set-attrs! {:src "http://ftp.c3d2.de/video/20170930-TSD-When_Machines_Are_Dreaming-Joscha_Bach.mp4"
+                                       :loop true
+                                       :controls true}
+                          :set-props! {:volume 0.1}
+                          :set-styles! {:position "absolute"
+                                        :top "0px"
+                                        :left "0px"
+                                        :height "100%"
+                                        :width "100%"
+                                        :object-fit "contain"}
+                          :call! {:play []}}]
+       [:by-id "mywebcam" {:set-attrs! {:src "http://pi3.local:8080/stream/video.mjpeg"}
+                           :set-styles! {:position "absolute"
+                                         :top "0px"
+                                         :left "0px"
+                                         :height "100%"
+                                         :width "100%"
+                                         :object-fit "contain"}}]]}
